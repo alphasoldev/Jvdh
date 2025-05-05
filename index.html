@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1 jeet vs 100 diamond hands $JVDH</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background-color: white;
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+            padding: 1rem;
+        }
+        
+        .content-container {
+            width: 100%;
+            max-width: 600px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+        }
+        
+        .title {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 1.5rem;
+            width: 100%;
+            text-align: center;
+        }
+        
+        .center-image {
+            width: 80%;
+            max-width: 300px;
+            height: auto;
+            object-fit: contain;
+            margin: 1rem 0;
+        }
+        
+        .links {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .link {
+            padding: 0.8rem 1.5rem;
+            border-radius: 0.5rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: black;
+        }
+        
+        .link:hover {
+            transform: translateY(-5px);
+        }
+        
+        .x-link {
+            background-color: white;
+            border: 2px solid black;
+        }
+        
+        .telegram-link {
+            background-color: #0088cc;
+            color: white;
+            border: none;
+        }
+        
+        .diamond {
+            position: absolute;
+            pointer-events: none;
+            z-index: 1;
+        }
+        
+        .x-icon {
+            width: 24px;
+            height: 24px;
+            margin-right: 8px;
+        }
+        
+        .telegram-icon {
+            width: 24px;
+            height: 24px;
+            margin-right: 8px;
+        }
+        
+        /* Mobile optimization */
+        @media (max-width: 480px) {
+            .title {
+                font-size: 1.5rem;
+            }
+            
+            .center-image {
+                width: 90%;
+            }
+            
+            .links {
+                gap: 1rem;
+            }
+            
+            .link {
+                padding: 0.6rem 1.2rem;
+                font-size: 0.9rem;
+            }
+            
+            .x-icon, .telegram-icon {
+                width: 20px;
+                height: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="content-container">
+        <div class="title">1 jeet vs 100 diamond hands $JVDH</div>
+        
+        <img src="gjgfjgfhjhffhh.jpg" alt="$JVDH" class="center-image">
+        
+        <div class="links">
+            <a href="#" class="link x-link">
+                <svg class="x-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+                <span>X</span>
+            </a>
+            
+            <a href="#" class="link telegram-link">
+                <svg class="telegram-icon" viewBox="0 0 24 24" fill="white">
+                    <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.198l-1.68 8.030c-.125.595-.472.737-.956.458l-2.636-1.974-1.273 1.237c-.142.142-.26.26-.533.26l.191-2.723 4.937-4.537c.215-.19-.046-.295-.332-.106l-6.102 3.912-2.628-.838c-.57-.182-.582-.57.12-.842l10.248-4.02c.469-.177.884.106.644 1.141z"/>
+                </svg>
+                <span>Telegram+</span>
+            </a>
+        </div>
+    </div>
+
+    <script>
+        // Create SVG diamond
+        function createDiamondSVG() {
+            const svgNS = "http://www.w3.org/2000/svg";
+            const svg = document.createElementNS(svgNS, "svg");
+            svg.setAttribute("viewBox", "0 0 120 120");
+            svg.setAttribute("width", "40");
+            svg.setAttribute("height", "40");
+            svg.classList.add("diamond");
+            
+            // Create diamond path
+            const diamond = document.createElementNS(svgNS, "path");
+            
+            // Diamond with facets
+            diamond.setAttribute("d", "M60 10 L110 60 L60 110 L10 60 Z M60 30 L90 60 L60 90 L30 60 Z");
+            diamond.setAttribute("fill", "black");
+            diamond.setAttribute("stroke", "#333");
+            diamond.setAttribute("stroke-width", "1");
+            
+            // Add highlights
+            const highlight1 = document.createElementNS(svgNS, "path");
+            highlight1.setAttribute("d", "M60 30 L90 60 L60 50 Z");
+            highlight1.setAttribute("fill", "#666");
+            
+            const highlight2 = document.createElementNS(svgNS, "path");
+            highlight2.setAttribute("d", "M60 50 L60 90 L30 60 Z");
+            highlight2.setAttribute("fill", "#444");
+            
+            svg.appendChild(diamond);
+            svg.appendChild(highlight1);
+            svg.appendChild(highlight2);
+            
+            return svg;
+        }
+        
+        // Diamond rain animation
+        function createDiamond() {
+            const diamond = createDiamondSVG();
+            
+            // Random position
+            const posX = Math.random() * window.innerWidth;
+            
+            // Set initial position
+            diamond.style.position = "absolute";
+            diamond.style.left = `${posX}px`;
+            diamond.style.top = "-40px";
+            
+            // Random size adjustment for mobile
+            const isMobile = window.innerWidth < 480;
+            const sizeMin = isMobile ? 15 : 20;
+            const sizeRange = isMobile ? 25 : 40;
+            const size = Math.random() * sizeRange + sizeMin;
+            
+            diamond.setAttribute("width", size);
+            diamond.setAttribute("height", size);
+            
+            // Random opacity
+            diamond.style.opacity = Math.random() * 0.5 + 0.3;
+            
+            // Append to body
+            document.body.appendChild(diamond);
+            
+            // Animation
+            let posY = -40;
+            const speed = Math.random() * 3 + 2;
+            const rotateSpeed = Math.random() * 1.5 - 0.75;
+            let rotation = 0;
+            
+            function animate() {
+                posY += speed;
+                rotation += rotateSpeed;
+                
+                diamond.style.top = `${posY}px`;
+                diamond.style.transform = `rotate(${rotation}deg)`;
+                
+                if (posY < window.innerHeight + 40) {
+                    requestAnimationFrame(animate);
+                } else {
+                    diamond.remove();
+                }
+            }
+            
+            animate();
+        }
+        
+        // Adjust diamond generation based on screen size
+        function startDiamondRain() {
+            const isMobile = window.innerWidth < 480;
+            const interval = isMobile ? 300 : 200;
+            const initialCount = isMobile ? 10 : 20;
+            
+            // Create new diamonds periodically
+            setInterval(createDiamond, interval);
+            
+            // Create initial diamonds
+            for (let i = 0; i < initialCount; i++) {
+                setTimeout(createDiamond, i * 100);
+            }
+        }
+        
+        // Start animation and adjust on resize
+        startDiamondRain();
+        window.addEventListener('resize', function() {
+            // Clear all existing diamonds
+            document.querySelectorAll('.diamond').forEach(d => d.remove());
+            // Restart diamond rain with new settings
+            startDiamondRain();
+        });
+    </script>
+</body>
+</html>
